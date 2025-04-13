@@ -2,6 +2,11 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <Description>Azunt is a general-purpose .NET utility library.</Description>
+    <PackageProjectUrl>https://github.com/VisualAcademy/Azunt.dll</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/VisualAcademy/Azunt.dll</RepositoryUrl>
+    <PackageTags>utility, ip-address, azunt</PackageTags>
+    <Title>Azunt</Title>
   </PropertyGroup>
 
 </Project>

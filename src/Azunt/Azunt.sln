@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azunt", "Azunt\Azunt.csproj", "{2E8AB9F3-6A27-4C65-BF9E-94C1FD7958B3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azunt.Networking.Tests", "Azunt.Networking.Tests\Azunt.Networking.Tests.csproj", "{8F97E6DA-D9B9-450B-AACB-18429F70E6D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Azunt.Utilities.Tests", "Azunt.Utilities.Tests\Azunt.Utilities.Tests.csproj", "{D9A8DC7B-B879-44DE-ADC1-98D9DF5AD2C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{8F97E6DA-D9B9-450B-AACB-18429F70E6D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F97E6DA-D9B9-450B-AACB-18429F70E6D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F97E6DA-D9B9-450B-AACB-18429F70E6D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9A8DC7B-B879-44DE-ADC1-98D9DF5AD2C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9A8DC7B-B879-44DE-ADC1-98D9DF5AD2C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9A8DC7B-B879-44DE-ADC1-98D9DF5AD2C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9A8DC7B-B879-44DE-ADC1-98D9DF5AD2C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

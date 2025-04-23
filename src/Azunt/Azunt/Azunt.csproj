@@ -1,12 +1,35 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Description>Azunt is a general-purpose .NET utility library.</Description>
-    <PackageProjectUrl>https://github.com/VisualAcademy/Azunt.dll</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/VisualAcademy/Azunt.dll</RepositoryUrl>
-    <PackageTags>utility, ip-address, azunt</PackageTags>
-    <Title>Azunt</Title>
-  </PropertyGroup>
+    <PropertyGroup>
+        <!-- Target framework -->
+        <TargetFramework>netstandard2.0</TargetFramework>
+
+        <!-- Nullable reference types support -->
+        <!--<LangVersion>latest</LangVersion>-->
+        <!--<Nullable>enable</Nullable>-->
+
+        <!-- Version 정보 -->
+        <VersionPrefix>1.0.1</VersionPrefix><!-- 여기서 버전 변경 -->
+        <VersionSuffix></VersionSuffix><!-- 예: preview, beta 등 -->
+        
+        <!-- NuGet metadata -->
+        <Title>Azunt</Title>
+        <Description>Azunt is a general-purpose .NET utility library for IP processing and identity management.</Description>
+        <PackageTags>utility, ip-address, authentication, identity</PackageTags>
+        <Authors>VisualAcademy</Authors>
+        <Company>Hawaso</Company>
+        <PackageProjectUrl>https://github.com/VisualAcademy/Azunt.dll</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/VisualAcademy/Azunt.dll</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        
+        <!-- optional -->
+        <Copyright>© 2025 VisualAcademy. All rights reserved.</Copyright>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- External dependencies -->
+        <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    </ItemGroup>
 
 </Project>

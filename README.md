@@ -13,7 +13,9 @@ Azunt.dll is a general-purpose .NET utility library for networking, security, an
 
 MIT
 
-## All 이름으로 .NET Standard 프로젝트 생성 후 웹 프로젝트에 프로젝트 참조 추가
+## All 프로젝트 생성
+
+### All 이름으로 .NET Standard 프로젝트 생성 후 웹 프로젝트에 프로젝트 참조 추가
 
 VisualAcademy 솔루션에서는 먼저 `All`이라는 이름으로 .NET Standard 프로젝트를 생성하고, 웹 프로젝트에 해당 프로젝트를 참조 추가하여 공통 기능(Azunt.dll)을 활용하는 방식으로 강의가 진행됩니다.
 

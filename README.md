@@ -104,3 +104,27 @@ https://youtu.be/JiXhL9eXFyM
     ```
 
 `IStorageServiceBase` 인터페이스를 통해 파일 관리 기능을 추상화함으로써, 로컬 파일 시스템뿐만 아니라 클라우드 스토리지 등 다양한 저장소 구현체와의 연동이 용이해졌습니다.
+
+
+## Verification
+
+### ManageMessageId 열거형 파일을 Azunt 프로젝트에 추가
+
+`ManageMessageId` 열거형은 사용자 계정 관리 작업의 결과를 나타내기 위해 `Azunt.Models.Enums` 네임스페이스에 추가되었습니다.  
+계정 관리 과정에서 발생할 수 있는 다양한 성공 및 오류 메시지를 코드 상에서 명확하게 구분하고 처리할 수 있도록 지원합니다.
+
+- **파일 경로**  
+  `src/Azunt/Azunt/Models/Enums/ManageMessageId.cs`
+
+- **정의된 항목**  
+  - `AddPhoneSuccess` : 전화번호 추가 성공
+  - `AddLoginSuccess` : 외부 로그인 추가 성공
+  - `ChangePasswordSuccess` : 비밀번호 변경 성공
+  - `SetTwoFactorSuccess` : 2단계 인증 설정 성공
+  - `SetPasswordSuccess` : 비밀번호 설정 성공
+  - `RemoveLoginSuccess` : 외부 로그인 제거 성공
+  - `RemovePhoneSuccess` : 전화번호 제거 성공
+  - `Error` : 오류 발생
+
+`ManageMessageId`를 사용함으로써, 사용자 계정 관리 기능의 결과 메시지를 일관성 있고 타입 안전한 방식으로 처리할 수 있습니다.
+

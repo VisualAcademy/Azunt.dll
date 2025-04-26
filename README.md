@@ -110,6 +110,8 @@ https://youtu.be/JiXhL9eXFyM
 
 ### ManageMessageId 열거형 파일을 Azunt 프로젝트에 추가
 
+https://youtu.be/n5u15dE-qWk
+
 `ManageMessageId` 열거형은 사용자 계정 관리 작업의 결과를 나타내기 위해 `Azunt.Models.Enums` 네임스페이스에 추가되었습니다.  
 계정 관리 과정에서 발생할 수 있는 다양한 성공 및 오류 메시지를 코드 상에서 명확하게 구분하고 처리할 수 있도록 지원합니다.
 

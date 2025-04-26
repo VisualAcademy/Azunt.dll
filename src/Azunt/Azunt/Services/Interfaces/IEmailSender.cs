@@ -3,22 +3,32 @@
 namespace Azunt.Services
 {
     /// <summary>
-    /// 이메일 전송 기능을 제공하는 인터페이스입니다.
+    /// Provides functionality for sending emails.
     /// </summary>
     public interface IEmailSender
     {
         /// <summary>
-        /// 비동기적으로 이메일을 전송합니다.
+        /// Sends an email asynchronously.
         /// </summary>
-        /// <param name="email">수신자 이메일 주소</param>
-        /// <param name="subject">이메일 제목</param>
-        /// <param name="message">이메일 본문</param>
-        /// <param name="isBodyHtml">이메일 본문을 HTML 형식으로 보낼지 여부 (기본값: true)</param>
+        /// <param name="email">Recipient email address.</param>
+        /// <param name="subject">Email subject.</param>
+        /// <param name="message">Email body content.</param>
+        /// <param name="isBodyHtml">Specifies whether the email body is in HTML format. (Default: true)</param>
         Task SendEmailAsync(string email, string subject, string message, bool isBodyHtml = true);
     }
 
+    /// <summary>
+    /// Provides functionality for sending emails using Mailchimp.
+    /// </summary>
     public interface IMailchimpEmailSender
     {
+        /// <summary>
+        /// Sends an email asynchronously using Mailchimp.
+        /// </summary>
+        /// <param name="email">Recipient email address.</param>
+        /// <param name="subject">Email subject.</param>
+        /// <param name="message">Email body content.</param>
+        /// <param name="isBodyHtml">Specifies whether the email body is in HTML format. (Default: true)</param>
         Task SendEmailAsync(string email, string subject, string message, bool isBodyHtml = true);
     }
 }

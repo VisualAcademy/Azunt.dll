@@ -9,7 +9,7 @@
         <!--<Nullable>enable</Nullable>-->
 
         <!-- Version 정보 -->
-        <VersionPrefix>1.0.2</VersionPrefix><!-- 여기서 버전 변경 -->
+        <VersionPrefix>1.0.3</VersionPrefix><!-- 여기서 버전 변경 -->
         <VersionSuffix></VersionSuffix><!-- 예: preview, beta 등 -->
         
         <!-- NuGet metadata -->

@@ -186,3 +186,70 @@ namespace Azunt.Repositories
     }
 }
 ```
+
+## Validators
+
+`Azunt.Utilities.Validation` 네임스페이스에는 사용자 입력값의 유효성을 검사하는 다양한 Validator 클래스가 포함되어 있습니다.
+이 유틸리티들은 .NET Standard 2.0 환경에서도 동작하며, 사용자의 입력 데이터가 규칙에 맞는지 검사하는 데에 사용됩니다.
+
+### UsernameValidator
+
+`UsernameValidator`는 사용자 이름에 허용되지 않는 문자가 포함되어 있는지 검사합니다.
+공백이나 특수문자가 포함된 사용자 이름을 방지하는 데 유용합니다.
+
+* **파일 경로**
+  `src/Azunt/Azunt/Utilities/Validation/UsernameValidator.cs`
+
+* **지원 기능**
+
+  ```csharp
+  public static bool IsValid(string username);
+  ```
+
+* **금지 문자 목록**
+  `\`, `/`, `:`, `?`, `*`, `"`, `<`, `>`, `|`, `(space)`, `'`, `%`, `&`, `+`
+
+### EmailValidator
+
+`EmailValidator`는 기본적인 형식의 이메일 주소를 정규식을 통해 검사합니다.
+복잡한 유효성 검사를 필요로 하지 않는 상황에서 빠르고 간단하게 사용할 수 있습니다.
+
+* **파일 경로**
+  `src/Azunt/Azunt/Utilities/Validation/EmailValidator.cs`
+
+* **지원 기능**
+
+  ```csharp
+  public static bool IsValid(string email);
+  ```
+
+* **정규식 기반 기본 포맷 검사**
+
+  * 예: `user@example.com`, `john.doe@domain.co`
+
+### PasswordValidator
+
+`PasswordValidator`는 강력한 보안 요건을 만족하는 비밀번호인지 검사합니다.
+다음 조건을 모두 만족해야 유효한 비밀번호로 간주됩니다:
+
+* 최소 8자 이상
+
+* 대문자 1개 이상 포함
+
+* 소문자 1개 이상 포함
+
+* 숫자 1개 이상 포함
+
+* 특수 문자 1개 이상 포함
+
+* **파일 경로**
+  `src/Azunt/Azunt/Utilities/Validation/PasswordValidator.cs`
+
+* **지원 기능**
+
+  ```csharp
+  public static bool IsValid(string password);
+  ```
+
+이러한 Validator 클래스를 활용하면 회원가입, 로그인, 설정 페이지 등에서 보다 신뢰할 수 있는 사용자 입력 검증 로직을 손쉽게 구현할 수 있습니다.
+

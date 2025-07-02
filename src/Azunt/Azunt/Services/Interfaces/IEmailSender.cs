@@ -4,6 +4,7 @@ namespace Azunt.Services
 {
     /// <summary>
     /// Provides functionality for sending emails.
+    /// IEmailSender 인터페이스 파일을 Azunt 프로젝트에 추가: https://youtu.be/dryTN9ydj5o
     /// </summary>
     public interface IEmailSender
     {

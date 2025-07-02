@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace Azunt.Services
+namespace Azunt.Services // All.Services
 {
     /// <summary>
     /// Provides functionality for sending emails.

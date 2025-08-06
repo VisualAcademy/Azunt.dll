@@ -21,7 +21,6 @@
         <PackageProjectUrl>https://github.com/VisualAcademy/Azunt.dll</PackageProjectUrl>
         <RepositoryUrl>https://github.com/VisualAcademy/Azunt.dll</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <PackageLicenseExpression>MIT</PackageLicenseExpression>
 
         <!-- License & Readme -->
         <PackageReadmeFile>README.md</PackageReadmeFile>

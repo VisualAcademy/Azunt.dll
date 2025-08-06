@@ -22,6 +22,10 @@
         <RepositoryUrl>https://github.com/VisualAcademy/Azunt.dll</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+        <!-- License & Readme -->
+        <PackageReadmeFile>README.md</PackageReadmeFile>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
         
         <!-- optional -->
         <Copyright>© 2025 VisualAcademy. All rights reserved.</Copyright>
@@ -30,6 +34,10 @@
     <ItemGroup>
         <!-- External dependencies -->
         <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+
+        <!-- Include README and License in the NuGet package -->
+        <None Include="..\..\..\README.md" Pack="true" PackagePath="" />
+        <None Include="..\..\..\LICENSE" Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>

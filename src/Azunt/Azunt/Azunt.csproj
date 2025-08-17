@@ -4,13 +4,15 @@
         <!-- Target framework -->
         <TargetFramework>netstandard2.0</TargetFramework>
 
-        <!-- Nullable reference types support -->
+        <!-- C# language version / nullable support -->
         <LangVersion>latest</LangVersion>
 
-        <!-- Version 정보 -->
-        <VersionPrefix>1.1.4</VersionPrefix><!-- 여기서 버전 변경 -->
-        <VersionSuffix></VersionSuffix><!-- 예: preview, beta 등 -->
-        
+        <!-- Version info -->
+        <VersionPrefix>1.1.5</VersionPrefix>
+        <!-- Update version here -->
+        <VersionSuffix></VersionSuffix>
+        <!-- e.g., preview, beta -->
+
         <!-- NuGet metadata -->
         <Title>Azunt</Title>
         <Description>Azunt is a general-purpose .NET utility library for IP processing and identity management.</Description>
@@ -24,30 +26,29 @@
         <!-- License & Readme -->
         <PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
-        
+
         <!-- optional -->
         <Copyright>© 2025 VisualAcademy. All rights reserved.</Copyright>
-
     </PropertyGroup>
-        
-    <!-- NetStandard 2.0: 경고 최소화, 주석만 노출 -->
+
+    <!-- .NET Standard 2.0: minimize warnings, expose annotations only -->
     <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
         <Nullable>annotations</Nullable>
-        <!-- 선택: 기존 코드 경고가 여전히 거슬리면 일부만 완화 -->
+        <!-- Optional: relax a few legacy warnings if they are too noisy -->
         <!-- <NoWarn>$(NoWarn);CS8618;CS8603;CS8625</NoWarn> -->
     </PropertyGroup>
 
-    <!-- .NET 8: 엄격 모드로 품질 보장 -->
+    <!-- .NET 8: strict mode for code quality -->
     <PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
-    <!-- netstandard2.0에서 required 컴파일러 특성 폴리필 포함 -->
+    <!-- Include required-members compiler attributes polyfill for netstandard2.0 -->
     <!--
-    <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-        <Compile Include="Polyfills/RequiredMembers.cs" />
-    </ItemGroup>
-    -->
+  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+    <Compile Include="Polyfills/RequiredMembers.cs" />
+  </ItemGroup>
+  -->
 
     <ItemGroup>
         <!-- External dependencies -->
@@ -55,7 +56,7 @@
 
         <!-- Include README and License in the NuGet package -->
         <None Include="..\..\..\README.md" Pack="true" PackagePath="" />
-        <None Include="..\..\..\LICENSE" Pack="true" PackagePath="" />
+        <None Include="..\..\..\LICENSE"   Pack="true" PackagePath="" />
     </ItemGroup>
 
 </Project>

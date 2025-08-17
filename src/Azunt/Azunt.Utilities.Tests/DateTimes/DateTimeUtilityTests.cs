@@ -17,7 +17,7 @@ namespace Azunt.Utilities.Tests.DateTimes
             var result = DateTimeUtility.ShowTimeOrDate(now);
 
             // Assert
-            Assert.IsTrue(result.Contains(":"));
+            Assert.IsTrue(result.Contains(':'));
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace Azunt.Utilities.Tests.DateTimes
             var result = DateTimeUtility.ShowTimeOrDate(past);
 
             // Assert
-            Assert.IsTrue(result.Contains("-"));
+            Assert.IsTrue(result.Contains('-'));
         }
 
         [TestMethod]
@@ -50,7 +50,7 @@ namespace Azunt.Utilities.Tests.DateTimes
         public void ShowDate_ShouldReturnEmpty_WhenNull()
         {
             // Act
-            var result = DateTimeUtility.ShowDate(null);
+            var result = DateTimeUtility.ShowDate(null!);
 
             // Assert
             Assert.AreEqual("", result);

@@ -31,7 +31,7 @@ namespace Azunt.Utilities.Tests.Validation
         [TestMethod]
         public void ValidPassword_ReturnsFalse_ForNullOrEmpty()
         {
-            Assert.IsFalse(PasswordValidator.IsValid(null));
+            Assert.IsFalse(PasswordValidator.IsValid(null!));
             Assert.IsFalse(PasswordValidator.IsValid(""));
         }
     }

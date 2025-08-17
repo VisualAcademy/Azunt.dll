@@ -25,7 +25,7 @@ namespace Azunt.Utilities.Tests.Validation
         [TestMethod]
         public void ValidEmail_ReturnsFalse_ForNullOrEmpty()
         {
-            Assert.IsFalse(EmailValidator.IsValid(null));
+            Assert.IsFalse(EmailValidator.IsValid(null!));
             Assert.IsFalse(EmailValidator.IsValid(""));
         }
     }

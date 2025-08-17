@@ -5,8 +5,7 @@
         <TargetFramework>netstandard2.0</TargetFramework>
 
         <!-- Nullable reference types support -->
-        <!--<LangVersion>latest</LangVersion>-->
-        <!--<Nullable>enable</Nullable>-->
+        <LangVersion>latest</LangVersion>
 
         <!-- Version 정보 -->
         <VersionPrefix>1.1.4</VersionPrefix><!-- 여기서 버전 변경 -->
@@ -28,7 +27,27 @@
         
         <!-- optional -->
         <Copyright>© 2025 VisualAcademy. All rights reserved.</Copyright>
+
     </PropertyGroup>
+        
+    <!-- NetStandard 2.0: 경고 최소화, 주석만 노출 -->
+    <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+        <Nullable>annotations</Nullable>
+        <!-- 선택: 기존 코드 경고가 여전히 거슬리면 일부만 완화 -->
+        <!-- <NoWarn>$(NoWarn);CS8618;CS8603;CS8625</NoWarn> -->
+    </PropertyGroup>
+
+    <!-- .NET 8: 엄격 모드로 품질 보장 -->
+    <PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <!-- netstandard2.0에서 required 컴파일러 특성 폴리필 포함 -->
+    <!--
+    <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+        <Compile Include="Polyfills/RequiredMembers.cs" />
+    </ItemGroup>
+    -->
 
     <ItemGroup>
         <!-- External dependencies -->

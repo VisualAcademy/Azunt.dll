@@ -26,7 +26,7 @@ namespace Azunt.Utilities.Tests.Validation
         [TestMethod]
         public void ValidUsername_ReturnsFalse_ForNullOrEmpty()
         {
-            Assert.IsFalse(UsernameValidator.IsValid(null));
+            Assert.IsFalse(UsernameValidator.IsValid(null!));
             Assert.IsFalse(UsernameValidator.IsValid(""));
             Assert.IsFalse(UsernameValidator.IsValid(" "));
         }

@@ -9,7 +9,7 @@ namespace Azunt.Utilities.Tests.Formatters
         [TestMethod]
         public void Format_ShouldReturnNone_WhenInputIsNull()
         {
-            var result = PhoneNumberFormatter.Format(null);
+            var result = PhoneNumberFormatter.Format(null!);
             Assert.AreEqual("None", result);
         }
 

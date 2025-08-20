@@ -8,14 +8,14 @@
         <LangVersion>latest</LangVersion>
 
         <!-- Version info -->
-        <VersionPrefix>1.1.6</VersionPrefix>
+        <VersionPrefix>1.1.7</VersionPrefix>
         <!-- Update version here -->
         <VersionSuffix></VersionSuffix>
         <!-- e.g., preview, beta -->
 
         <!-- NuGet metadata -->
         <Title>Azunt</Title>
-        <Description>Azunt is a general-purpose .NET utility library for IP processing and identity management.</Description>
+        <Description>Azunt is a general-purpose .NET utility library</Description>
         <PackageTags>utility, ip-address, authentication, identity</PackageTags>
         <Authors>VisualAcademy</Authors>
         <Company>Hawaso</Company>
@@ -45,10 +45,10 @@
 
     <!-- Include required-members compiler attributes polyfill for netstandard2.0 -->
     <!--
-  <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
-    <Compile Include="Polyfills/RequiredMembers.cs" />
-  </ItemGroup>
-  -->
+    <ItemGroup Condition="'$(TargetFramework)'=='netstandard2.0'">
+        <Compile Include="Polyfills/RequiredMembers.cs" />
+    </ItemGroup>
+    -->
 
     <ItemGroup>
         <!-- External dependencies -->

@@ -253,3 +253,77 @@ namespace Azunt.Repositories
 
 이러한 Validator 클래스를 활용하면 회원가입, 로그인, 설정 페이지 등에서 보다 신뢰할 수 있는 사용자 입력 검증 로직을 손쉽게 구현할 수 있습니다.
 
+## 파일 → 미디어 타입(MIME) 매핑 가이드
+
+`Azunt.Utilities.Media.FileMediaTypeResolver` 는 **파일명(또는 확장자)** 을 받아 적절한 **Content-Type(MIME)** 문자열을 반환하는 가벼운 헬퍼입니다.
+프로젝트마다 흩어져 있던 스위치문/딕셔너리를 대체해 **일관성**과 **가독성**을 높입니다.
+
+### 언제 쓰나요?
+
+* ASP.NET Core에서 `File(...)` 응답 시 `contentType` 지정
+* 파일 다운로드/미리보기, 첨부파일 저장소 등에서 확장자 기반 MIME 판별이 필요할 때
+* 모르는 확장자는 안전하게 `application/octet-stream`으로 처리하고 싶을 때
+
+### 기본 사용
+
+```csharp
+using Azunt.Utilities.Media;
+
+// 파일명 전체를 넘겨도 되고, ".pdf" 같은 확장자만 넘겨도 됩니다.
+var mediaType1 = FileMediaTypeResolver.GetMediaType("report.pdf"); // "application/pdf"
+var mediaType2 = FileMediaTypeResolver.GetMediaType(".png");       // "image/png"
+
+// 알 수 없는 확장자 → 기본값 지정 가능 (미지정 시 application/octet-stream)
+var fallback = FileMediaTypeResolver.GetMediaType("archive.unknown", defaultMediaType: "application/octet-stream");
+```
+
+### ASP.NET Core Controller 예시
+
+```csharp
+using Azunt.Utilities.Media;
+
+public async Task<IActionResult> Download(string filePath, string fileName)
+{
+    var mediaType = FileMediaTypeResolver.GetMediaType(fileName);
+    var bytes = await System.IO.File.ReadAllBytesAsync(filePath);
+    return File(bytes, mediaType, fileName);
+}
+```
+
+### 대용량 파일: 스트리밍 권장
+
+```csharp
+using Azunt.Utilities.Media;
+
+public IActionResult DownloadStream(string filePath, string fileName)
+{
+    var mediaType = FileMediaTypeResolver.GetMediaType(fileName);
+    var stream = System.IO.File.OpenRead(filePath);
+    return File(stream, mediaType, fileName); // FileStreamResult → 메모리 사용 최소화
+}
+```
+
+### 결과 확인(검증) API
+
+```csharp
+using Azunt.Utilities.Media;
+
+if (FileMediaTypeResolver.TryGetMediaType(".xlsx", out var mt))
+{
+    // mt == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+}
+else
+{
+    // 미지정 확장자 처리
+    mt = "application/octet-stream";
+}
+```
+
+### 특징
+
+* **.NET Standard 2.0 지원**: 넓은 호환성
+* **보수적인 기본값**: 알 수 없는 확장자는 `application/octet-stream`
+* **자주 쓰는 유형 포함**: pdf, doc/docx, xls/xlsx, ppt/pptx, txt, jpg/jpeg, png, gif 등
+* **간단한 API**: `GetMediaType(...)`, `TryGetMediaType(...)` 두 가지로 충분
+
+> 이미 `FileExtensionContentTypeProvider`를 사용 중이라면 그대로 유지해도 되지만, **간단한 의존성**과 **일관된 기본값**이 필요하다면 `FileMediaTypeResolver`가 더 가볍고 쓰기 편합니다.

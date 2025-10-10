@@ -8,7 +8,7 @@
         <LangVersion>latest</LangVersion>
 
         <!-- Version info -->
-        <VersionPrefix>1.1.8</VersionPrefix>
+        <VersionPrefix>1.1.9</VersionPrefix>
         <!-- Update version here -->
         <VersionSuffix></VersionSuffix>
         <!-- e.g., preview, beta -->

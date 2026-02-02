@@ -8,7 +8,7 @@
         <LangVersion>latest</LangVersion>
 
         <!-- Version info -->
-        <VersionPrefix>1.1.9</VersionPrefix>
+        <VersionPrefix>1.2.0</VersionPrefix>
         <!-- Update version here -->
         <VersionSuffix></VersionSuffix>
         <!-- e.g., preview, beta -->
@@ -28,7 +28,7 @@
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
 
         <!-- optional -->
-        <Copyright>© 2025 VisualAcademy. All rights reserved.</Copyright>
+        <Copyright>© 2026 VisualAcademy. All rights reserved.</Copyright>
     </PropertyGroup>
 
     <!-- .NET Standard 2.0: minimize warnings, expose annotations only -->

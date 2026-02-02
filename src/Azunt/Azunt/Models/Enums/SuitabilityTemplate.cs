@@ -7,6 +7,9 @@
         Initial = 0,
 
         /// <summary>Template for renewal reports.</summary>
-        Renewal = 1
+        Renewal = 1,
+
+        /// <summary>Template for interim (mid-cycle or temporary) reports.</summary>
+        Interim = 2,
     }
 }

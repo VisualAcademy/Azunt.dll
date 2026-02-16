@@ -3,19 +3,31 @@
 namespace Azunt.Models.AccountViewModels
 {
     /// <summary>
-    /// 로그인 화면에서 사용될 뷰 모델 정의
+    /// View model used for user login operations.
+    /// Provides validation attributes for authentication input fields.
     /// </summary>
     public class LoginViewModel
     {
-        [Required] // 필수 입력 필드
-        [EmailAddress] // 이메일 형식인지 검증
-        public string Email { get; set; } // 사용자 이메일
+        /// <summary>
+        /// The user's email address.
+        /// Must be a valid email format.
+        /// </summary>
+        [Required]
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
 
-        [Required] // 필수 입력 필드
-        [DataType(DataType.Password)] // 비밀번호 입력 필드로 설정
-        public string Password { get; set; } // 사용자 비밀번호
+        /// <summary>
+        /// The user's password.
+        /// Rendered as a password input field.
+        /// </summary>
+        [Required]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = string.Empty;
 
-        [Display(Name = "Remember me?")] // UI에서 표시될 이름 지정
-        public bool RememberMe { get; set; } // 로그인 상태 유지 여부
+        /// <summary>
+        /// Indicates whether the authentication session should be persistent.
+        /// </summary>
+        [Display(Name = "Remember me?")]
+        public bool RememberMe { get; set; }
     }
 }

@@ -8,10 +8,8 @@
         <LangVersion>latest</LangVersion>
 
         <!-- Version info -->
-        <VersionPrefix>1.2.2</VersionPrefix>
-        <!-- Update version here -->
+        <VersionPrefix>1.2.3</VersionPrefix>
         <VersionSuffix></VersionSuffix>
-        <!-- e.g., preview, beta -->
 
         <!-- NuGet metadata -->
         <Title>Azunt</Title>
@@ -36,11 +34,6 @@
         <Nullable>annotations</Nullable>
         <!-- Optional: relax a few legacy warnings if they are too noisy -->
         <!-- <NoWarn>$(NoWarn);CS8618;CS8603;CS8625</NoWarn> -->
-    </PropertyGroup>
-
-    <!-- .NET 8: strict mode for code quality -->
-    <PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
-        <Nullable>enable</Nullable>
     </PropertyGroup>
 
     <!-- Include required-members compiler attributes polyfill for netstandard2.0 -->

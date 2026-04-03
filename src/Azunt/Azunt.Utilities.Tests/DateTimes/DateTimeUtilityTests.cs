@@ -17,7 +17,7 @@ namespace Azunt.Utilities.Tests.DateTimes
             var result = DateTimeUtility.ShowTimeOrDate(now);
 
             // Assert
-            Assert.IsTrue(result.Contains(':'));
+            Assert.Contains(":", result);
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace Azunt.Utilities.Tests.DateTimes
             var result = DateTimeUtility.ShowTimeOrDate(past);
 
             // Assert
-            Assert.IsTrue(result.Contains('-'));
+            Assert.Contains("-", result);
         }
 
         [TestMethod]
@@ -66,7 +66,7 @@ namespace Azunt.Utilities.Tests.DateTimes
             var result = DateTimeUtility.TimeAgo(dt, useKorean: true);
 
             // Assert
-            Assert.IsTrue(result.Contains("분 전"));
+            Assert.Contains("분 전", result);
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace Azunt.Utilities.Tests.DateTimes
             var result = DateTimeUtility.TimeAgo(dt, useKorean: false);
 
             // Assert
-            Assert.IsTrue(result.Contains("minutes ago"));
+            Assert.Contains("minutes ago", result);
         }
 
         [TestMethod]

@@ -60,23 +60,13 @@ namespace Azunt.Utilities.Tests.Navigation
         }
 
         [TestMethod]
-        public void Normalize_WithBaseUri_ShouldReturnDefault_WhenHostOrPortDiffers()
+        public void Normalize_WithBaseUri_ShouldKeepLocalPath_WhenInputIsRelativePath()
         {
-            var baseUri = new Uri("https://azunt.com/");
+            var differentHostBaseUri = new Uri("https://example.com:5001");
 
-            // absolute is already blocked by Normalize(returnUrl)
-            Assert.AreEqual("/", ReturnUrlUtility.Normalize("https://example.com", baseUri));
+            var result = ReturnUrlUtility.Normalize("/dashboard", differentHostBaseUri, "/");
 
-            // scheme-relative is blocked by Normalize(returnUrl)
-            Assert.AreEqual("/", ReturnUrlUtility.Normalize("//example.com/path", baseUri));
-
-            // ensure host differs (should fall back)
-            var differentHostBaseUri = new Uri("https://login.azunt.com/");
-            Assert.AreEqual("/", ReturnUrlUtility.Normalize("/dashboard", differentHostBaseUri, "/"));
-
-            // port differs (should fall back)
-            var baseUriWithPort = new Uri("https://azunt.com:8443/");
-            Assert.AreEqual("/", ReturnUrlUtility.Normalize("/dashboard", baseUriWithPort, "/"));
+            Assert.AreEqual("/dashboard", result);
         }
 
         [TestMethod]

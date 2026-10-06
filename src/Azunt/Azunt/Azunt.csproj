@@ -8,7 +8,7 @@
         <LangVersion>latest</LangVersion>
 
         <!-- Version info -->
-        <VersionPrefix>1.2.3</VersionPrefix>
+        <VersionPrefix>1.2.4</VersionPrefix>
         <VersionSuffix></VersionSuffix>
 
         <!-- NuGet metadata -->
